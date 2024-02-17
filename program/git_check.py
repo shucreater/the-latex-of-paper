@@ -51,7 +51,7 @@ if __name__ == '__main__':
 	# print('.py' in filedir[0])
 
 	# 文本规范检查(txt, tex)
-	print('文本规范检查(txt, tex)')
+	print('文本规范检查(txt, tex)\n')
 	for file_name in filedir:
 		# 文本替换
 		if ".txt" in file_name or ".tex" in file_name:
@@ -60,9 +60,10 @@ if __name__ == '__main__':
 
 	# tex编译文件删除项	
 	print('\ntex编译文件删除')
+	# 需要删去的文件类型
+	keywords = ['.pdf', 'synctex.gz', '.aux', '.log',]
+	print("\n删去的文件类型：\n", keywords)
 	for file_name in filedir:
-		# 需要删去的文件类型
-		keywords = ['.pdf', 'synctex.gz', '.aux', '.log',]
 		# 检查每一个文件是否是keywords指定的类型
 		if any(j in file_name and j for j in keywords) == True:
 			file_path = os.path.join(base_path, file_name)
