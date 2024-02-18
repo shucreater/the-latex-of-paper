@@ -25,6 +25,8 @@ def text_check(file_path, file_name):
 		data = data.replace('。', '.')
 		data = data.replace(r'.$', r'.\ $')
 		data = data.replace(r',$', r',\ $')
+		data = data.replace('（', '(')
+		data = data.replace('）', ')')
 
 	# 以只写模式打开我们的文本文件以写入替换的内容
 	with open(file_path, 'w',encoding='UTF-8') as file:
@@ -66,7 +68,7 @@ if __name__ == '__main__':
 	# tex编译文件删除项	
 	print('\ntex编译文件删除:')
 	# 需要删去的文件类型
-	keywords = ['.pdf', 'synctex.gz', '.aux', '.log',]
+	keywords = ['.pdf', 'synctex.gz', '.aux', '.log', '.out', '.toc']
 	print(keywords, "\n")
 	
 	# 计数

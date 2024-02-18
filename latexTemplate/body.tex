@@ -1,13 +1,37 @@
+\thispagestyle{empty} % 标题页不编号
+\thesistitle{论文中文标题}
+
+\begin{cnabstract}
+	论文摘要以浓缩的形式概括研究课题的内容,中文摘要宜在300字左右,并有相应的外文摘要.(论文大标题位于一页首行,黑体小二号,加粗,居中,段前距一行,段后距一行;“摘要”:黑体小四左对齐;摘要内容,300字左右,用宋体小四号,1.25倍行距.)
+	\par\noindent\textbf{关键词: } 关键字1,关键字2,关键字3 % “关键词”加粗
+\end{cnabstract}
+
+\par\par
+\thesisentitle{English Title Here}
+
+\begin{enabstract}
+	Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese Abstract translated from Chinese.(英文标题居中,Times New Roman小二号加粗,段后距一行; “Abstract”用Times New Roman小四号加粗;Abstract内容,300字左右,用Times New Roman小四号,1.25倍行距)
+	\par\noindent\textbf{Keywords:} Keyword1;Keyword2;Keyword3;Keyword4;Keyword5(“Keywords”用Times New Roman小四号加粗,内容Times New Roman小四)
+\end{enabstract}
+\newpage
+\setcounter{page}{1}
+\tableofcontents
+
+%----------------------正文----------------------------
+\newpage
+(“目录”位于一页首行,用黑体小二号,居中,段前距一行,段后距一行.)
+(目录列出一、二、三级标题,一级标题左对齐、二级标题缩进一个字符、三级标题缩进两个字符.一级标题用宋体小四号加粗,二、三级标题用宋体小四号;标题与页码用“……”联接.)
+
 \section{第一章}
 \subsection{二级标题}
 \subsubsection{三级标题}
-凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数\textsuperscript{\cite{ref1}}。正文正文正文正文正文\par
+凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数\textsuperscript{\cite{ref1}}.正文正文正文正文正文\par
 
 %经典三线表
 \begin{table}[H]
     \caption{\textbf{Example 1}}%标题
     \centering%把表居中
-    \begin{tabular}{cccc}%四个c代表该表一共四列，内容全部居中
+    \begin{tabular}{cccc}%四个c代表该表一共四列,内容全部居中
     \toprule%第一道横线
     Item 1&Item 2&Item 3&Item 4 \\
     \midrule%第二道横线 
@@ -61,3 +85,21 @@
 \subsection{xxxx}
 \subsubsection{xxx}
 凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑
+
+
+% todo 建议使用bib库对参考文献进行管理.
+%-----------------------参考文献-----------------------------------
+%\newpage
+%\begin{thebibliography}{99} % 文献
+%	\bibitem{ref1}B. Sisman, J. Yamagishi, S. King and H. Li, "An Overview of Voice Conversion and Its Challenges: From Statistical Modeling to Deep Learning," in IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 29, pp. 132-157, 2021, doi: 10.1109/TASLP.2020.3038524.
+%	\bibitem{ref2}潘孝勤,芦天亮,杜彦辉,仝鑫.基于深度学习的语音合成与转换技术综述[J].计算机科学,2021,48(08):200-208.
+%	\bibitem{ref3}Kim J, Kong J, Son J. Conditional variational autoencoder with adversarial learning for end-to-end text-to-speech[C]//International Conference on Machine Learning. PMLR, 2021: 5530-5540.
+%\end{thebibliography}
+
+%--------------------附录----------------------------
+\newpage
+\appendix
+\section{附录1}
+some text...
+\section{附录2}
+some text...

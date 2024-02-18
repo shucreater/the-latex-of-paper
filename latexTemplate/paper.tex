@@ -1,28 +1,19 @@
 \documentclass[12pt, a4paper]{ctexart} % 默认小四号字
-\usepackage{hyperref} % 超链接
-\usepackage{cite} % 引用
-%---------------------页面设置------------------------------
-\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry} % 页边距2.5cm
-\pagestyle{plain} % 页眉页脚
-% plain，默认设置，在页脚显示页码  headings, 页脚空白，在页眉中显示章节名及页码  empty， 页眉页脚均设置为空白
-\pagenumbering{arabic} % 页码形式
-% arabic：阿拉伯数字 roman：小写罗马数字 Roman：大写罗马数字 alph：小写字母 Alpa：大写字母
 
-%--------------------默认字体字号-----------------------
+%todo 页面设置  
+\usepackage[a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm]{geometry}
+
+
+
+% 默认字体字号
 \usepackage{fontspec}
 \setmainfont{Times New Roman}  % 英文是Times New Roman
 \usepackage{xeCJK}
-\setCJKmainfont{SimSun}[BoldFont= SimHei, ItalicFont = KaiTi ] % 中文默认字体：宋体，粗体以黑体代替，斜体以楷书代替
+\setCJKmainfont{SimSun}[BoldFont= SimHei, ItalicFont = KaiTi ] % 中文默认字体：宋体,粗体以黑体代替,斜体以楷书代替
 
-%--------------------摘要----------------------------
-\newenvironment{enabstract}{
-  \par \noindent\centerline{\bfseries \LARGE Abstract:} % 开头不空加粗居中大一号
-  \par \vskip 12pt}{\par\vskip 12pt} % 竖直间距12磅
-\newenvironment{cnabstract}{
-  \par \noindent\centerline{\bfseries \LARGE 摘要：}
-  \par \vskip 12pt}{\par\vskip 12pt}
 
-%---------------------目录----------------------------
+
+% todo 目录
 % 目录字体设置
 \usepackage{subfigure}
 \usepackage[subfigure]{tocloft}
@@ -33,77 +24,75 @@
 \renewcommand{\cftsecpagefont}{\songti} % 页码字体
 
 %-------------------章节与段落---------------------------
-\setlength{\parskip}{1\baselineskip}  % 段间距,基本间距的倍数
-\ctexset{section={format={\heiti \zihao{-2} }, beforeskip=12pt,afterskip=12pt}, % 多级标题格式，可加/centering
-subsection={format={\heiti \zihao{4}},beforeskip=12pt,afterskip=0pt},          % 例：一级标题
-subsubsection={format={\heiti \zihao{-4}},beforeskip=12pt,afterskip=0pt}}	   % 黑体，小二号，段前12磅，段后12磅
+%\setlength{\parskip}{1\baselineskip}  % 段间距,基本间距的倍数
+%\ctexset{section={format={\heiti \zihao{-2} }, beforeskip=12pt,afterskip=12pt}, % 多级标题格式,可加/centering
+%subsection={format={\heiti \zihao{4}},beforeskip=12pt,afterskip=0pt},          % 例：一级标题
+%subsubsection={format={\heiti \zihao{-4}},beforeskip=12pt,afterskip=0pt}}	   % 黑体,小二号,段前12磅,段后12磅
 
 %------------------图表公式代码-------------------------
 \usepackage{graphicx} % 图片
 \graphicspath{{pic/}{logo/}}  % pic为图片存放路径
 \usepackage{caption} % 图表名字体字号
-\captionsetup{font={small,bf},labelfont={small,bf}} % 比标准字号小一号，加粗
+\captionsetup{font={small,bf},labelfont={small,bf}} % 比标准字号小一号,加粗
 \usepackage{amsmath}
 \numberwithin{equation}{section}%公式按章节编号
 \numberwithin{figure}{section}%图表按章节编号
 \usepackage{float}%提供float浮动环境
-\usepackage{booktabs} % 三线表，提供命令\toprule、\midrule、\bottomrule
+\usepackage{booktabs} % 三线表,提供命令\toprule、\midrule、\bottomrule
 \usepackage{algorithmic} % 伪代码
 \usepackage{algorithm}
 \usepackage{fancyhdr}
 
-% -----------------------标题-----------------------------------
-\title{\heiti \zihao{2}\LaTeX 中文论文模板}%黑体2号加粗
-\author{\kaishu \zihao{-4} 小明\\\songti \zihao{-5} 加里敦大学}%作者姓名楷体小四，学院地址宋体小五
-\date{November 1, 2023}
+% todo 标题
 
+\title{\vspace{-3cm} \heiti \zihao{5} \LARGE 论文标题}%黑体2号加粗
+%\author{\kaishu \zihao{-4} 小明\\\songti \zihao{-5} 加里敦大学}%作者姓名楷体小四,学院地址宋体小五
+\date{}
+%--------------------摘要----------------------------
+%\newenvironment{enabstract}{
+	% \noindent 
+	%}
 
+% todo 标题
+\newcommand\thesistitle[1]{\begin{center}
+		 \zihao{5} \LARGE \textbf{#1}
+	\end{center}\par\par}
+
+\newcommand\thesisentitle[1]{\begin{center}
+	\zihao{-2} \textbf{#1}
+	\end{center}\par\par}
+
+% todo 摘要
+\newenvironment{cnabstract}{
+	\noindent \textbf{摘要:} 
+}
+
+\newenvironment{enabstract}{
+	\noindent \textbf{Abstract:} 
+}
+
+\usepackage{color,xcolor}
 \pagestyle{fancy}
-\lhead{} \chead{基于DenseNet和注意力机制的数学公式识别} \rhead{}
-\lfoot{} \cfoot{\thepage} \rfoot{}
+%\renewcommand{\headrule}{\color{gray}\xhrulefill[height=-2pt,thickness=1pt]}
+\lhead{} 
+\chead{\footnotesize \yahei \textcolor{gray}{基于DenseNet和注意力机制的数学公式识别}} 
+\rhead{\footnotesize \yahei \textcolor{gray}{\thepage}}
+\lfoot{} \cfoot{} \rfoot{}
+\renewcommand{\headrulewidth}{0.2pt} 
+\setlength{\headwidth}{\textwidth}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%导言/正文分割线%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}
+\usepackage{hyperref} % 超链接
+\usepackage{cite} % 引用
 \begin{document}
 
-\maketitle 
-\thispagestyle{empty} % 标题页不编号
-%\newpage % 换页
 
-%-------------------------摘要------------------------------
-\setcounter{page}{1} % 开始页码计数
-\begin{cnabstract}
-	中文摘要。凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数
-	\par\noindent\textbf{关键词: } 关键字1，关键字2，关键字3 % “关键词”加粗
-\end{cnabstract}
-	
-	\newpage
-\begin{enabstract}
-	English abstract.pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out pad out 
-	\par\noindent\textbf{Keywords:} keyword1, keyword2, keyword3
-\end{enabstract}
-
-
-%-------------------------目录-------------------------
-\newpage
-\tableofcontents
-
-%----------------------正文----------------------------
-\newpage
+\begin{spacing}{1.3541667}%段落行距设置
+	\zihao{4}
 \input{body}
-
-%-----------------------参考文献-----------------------------------
-\newpage
-\begin{thebibliography}{99} % 文献
-	\bibitem{ref1}B. Sisman, J. Yamagishi, S. King and H. Li, "An Overview of Voice Conversion and Its Challenges: From Statistical Modeling to Deep Learning," in IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 29, pp. 132-157, 2021, doi: 10.1109/TASLP.2020.3038524.
-	\bibitem{ref2}潘孝勤,芦天亮,杜彦辉,仝鑫.基于深度学习的语音合成与转换技术综述[J].计算机科学,2021,48(08):200-208.
-	\bibitem{ref3}Kim J, Kong J, Son J. Conditional variational autoencoder with adversarial learning for end-to-end text-to-speech[C]//International Conference on Machine Learning. PMLR, 2021: 5530-5540.
-\end{thebibliography}
-
-%--------------------附录----------------------------
-\newpage
-\appendix
- \section{附录1}
-	some text...
- \section{附录2}
-	some text...
+\end{spacing}
 
 \end{document}
