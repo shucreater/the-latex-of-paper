@@ -42,7 +42,10 @@ def text_check(file_path, file_name):
 # 主程序
 if __name__ == '__main__':
 	# 确认选项：
-	print("请在充分理解本程序后再使用。\n本程序使用带来的影响由操作者自行承担。\n同意请输入y或Y,或输入其他字符结束本程序：")
+	print("请在充分理解本程序后再使用。注意事项：\n\
+	   1.本程序使用带来的影响由操作者自行承担。\n\
+	   2.执行本脚本前请关闭其他打开本脚本所在根目录内的文件的软件\n\n\
+	   同意上述说明请输入y或Y,或输入其他字符结束本程序：")
 	jud = input()
 	if jud != 'y' and jud != 'Y':
 		print("程序未正常运行！")
@@ -68,7 +71,7 @@ if __name__ == '__main__':
 	# tex编译文件删除项	
 	print('\ntex编译文件删除:')
 	# 需要删去的文件类型
-	keywords = ['.pdf', 'synctex.gz', '.aux', '.log', '.out', '.toc']
+	keywords = ['.pdf', 'synctex.gz', '.aux', '.log', '.out', '.toc', '.blg', '.bbl']
 	print(keywords, "\n")
 	
 	# 计数
